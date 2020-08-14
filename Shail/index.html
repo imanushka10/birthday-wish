@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flex Panels 💪</title>
+  <title>Happy Birthday Kamini</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -51,11 +51,11 @@
       flex-direction: column;
     }
 
-    .panel1 { background-image:url(shail\ fourth.jpg); }
-    .panel2 { background-image:url(shail\ second.jpg); }
-    .panel4 { background-image:url(shail\ third.jpg); }
-    .panel3 { background-image:url(shail\ fifth.jpg); }
-    .panel5 { background-image:url(shail\ sare.jpg); }
+    .panel1 { background-image:url(./images/sitdown.jpg); }
+    .panel2 { background-image:url(./images/saree.jpg); }
+    .panel3 { background-image:url(./images/yellowfellow.jpg); }
+    .panel4 { background-image:url(./images/fire.jpg); }
+    .panel5 { background-image:url(./images/helmet.jpg); }
 
     /* Flex Children */
     .panel > * {
@@ -63,21 +63,14 @@
       width: 100%;
       transition: transform 0.5s;
       flex: 1 0 auto;
-      display:flex;
+      display: flex;
       justify-content: center;
       align-items: center;
-
     }
     .panel > *:first-child { transform: translateY(-100%); }
     .panel.open-active > *:first-child { transform: translateY(0); }
     .panel > *:last-child { transform: translateY(100%); }
     .panel.open-active > *:last-child { transform: translateY(0); }
-
-
-
-
-
-
 
     .panel p {
       text-transform: uppercase;
@@ -87,9 +80,7 @@
     }
     
     .panel p:nth-child(2) {
-      font-size: 2em;
-      margin-top: 250px;
-      color:black;
+      font-size: 4em;
     }
 
     .panel.open {
@@ -102,15 +93,30 @@
 
   <div class="panels">
     <div class="panel panel1">
-      </div>
+      <p>Hey</p>
+      <p>Let's</p>
+      <p>Dance</p>
+    </div>
     <div class="panel panel2">
-      </div>
+      <p>Love</p>
+      <p>Make</p>
+      <p>Share</p>
+    </div>
     <div class="panel panel3">
-      </div>
+      <p>Experience</p>
+      <p>It</p>
+      <p>Today</p>
+    </div>
     <div class="panel panel4">
-      </div>
+      <p>Give</p>
+      <p>Big</p>
+      <p>Till you can</p>
+    </div>
     <div class="panel panel5">
-      </div>
+      <p>God</p>
+      <p>Bless</p>
+      <p>You</p>
+    </div>
   </div>
 
   <script>
@@ -119,18 +125,15 @@
       function toggleOpen(){
         this.classList.toggle('open')
       }
-      function toggleactive(e){
+      function toggleActive(e){
         if(e.propertyName.includes('flex')){
-        this.classList.toggle('open-active')
-                                            }      
+          this.classList.toggle('open-active')
+        }      
       }
       panels.forEach(panel => panel.addEventListener('click', toggleOpen))
-      panels.forEach(panel => panel.addEventListener(transitionend))
+      panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
         
-  
   </script>
-
-
 
 </body>
 </html>
